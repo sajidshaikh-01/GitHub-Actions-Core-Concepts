@@ -6,9 +6,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: List files and greet
+        run: |
+          echo "Hello, World!"
+          ls -ltra
+          cat README.md
+
       - name: My first step
-        run: echo "Hello, World!"
-      - name: My second step
-        run: echo "This is my first GitHub Actions workflow."
-      - name: My third step
-        run: ls
+        run: cowsay -f dragon "run for cover, the dragon has arrived!" >> dragon.txt
+        
+
+    #   - name: My second step
+    #     run: echo "This is my first GitHub Actions workflow."
+    #   - name: My third step
+    #     run: ls
