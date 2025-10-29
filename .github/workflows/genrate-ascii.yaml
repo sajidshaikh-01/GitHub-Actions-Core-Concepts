@@ -12,4 +12,6 @@ jobs:
         run: ls -ltra
 
       - name: Executing shell script to generate ASCII art
-        run: ./.github/script.sh
+        run: |
+          chmod +x ./.github/script.sh
+          ./.github/script.sh
