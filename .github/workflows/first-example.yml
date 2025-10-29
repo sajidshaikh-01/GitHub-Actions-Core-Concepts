@@ -4,6 +4,8 @@ jobs:
   my-first-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: My first step
         run: echo "Hello, World!"
       - name: My second step
