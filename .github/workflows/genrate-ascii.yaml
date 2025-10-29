@@ -2,16 +2,35 @@ name: Genrate ASCII Art
 on: [push]
 
 jobs:
-  generate-ascii-art:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    build_job_1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: install cowsay program
+              run: sudo apt-get install cowsay -y
 
-      - name: list files in the repository
-        run: ls -ltra
+            - name: Execute cowsay cmd
+              run: cowsay -f dragon "Beware! The dragon has awoken!" >> dragon.txt
 
-      - name: Executing shell script to generate ASCII art
-        run: |
-          chmod +x ./.github/script.sh
-          ./.github/script.sh
+            - name: sleep for 30 seconds
+              run: sleep 30
+        
+    build_job_2:
+        runs-on: ubuntu-latest
+        needs: build_job_1
+        steps:
+            - name: sleep for 10 seconds
+              run: sleep 10
+
+            - name: test file exists
+              run: grep -i "dragon" dragon.txt
+
+  
+    build_job_3:
+        runs-on: ubuntu-latest
+        needs: build_job_2
+        steps:
+            - name: display file content
+              run: cat dragon.txt
+
+            - name: read file details
+              run: cat dragon.txt && ls -ltra
