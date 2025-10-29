@@ -13,8 +13,8 @@ jobs:
           cat README.md
 
       - name: My first step
-        run: cowsay -f dragon "run for cover, the dragon has arrived!" >> dragon.txt
-        
+        run: cowsay -f dragon "Beware! The dragon has awoken!" >> dragon.txt
+
 
     #   - name: My second step
     #     run: echo "This is my first GitHub Actions workflow."

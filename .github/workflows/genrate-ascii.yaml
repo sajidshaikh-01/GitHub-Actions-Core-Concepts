@@ -1,0 +1,19 @@
+name: Genrate ASCII Art
+on: [push]
+
+jobs:
+  generate-ascii-art:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install cowsay
+        run: sudo apt-get install -y cowsay
+
+      - name: Generate ASCII Art
+        run: |
+          cowsay -f dragon "Beware! The dragon has awoken!" >> dragon.txt
+          grep -i "dragon" dragon.txt
+          cat dragon.txt
+          ls
