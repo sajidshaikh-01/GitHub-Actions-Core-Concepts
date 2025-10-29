@@ -22,7 +22,7 @@ jobs:
         needs: build_job_1
         steps:
             - name: download dragon text file 
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v4
               with:
                 name: dragon-artifact
 
