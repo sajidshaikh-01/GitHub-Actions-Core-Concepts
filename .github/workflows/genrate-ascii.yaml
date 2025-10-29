@@ -8,12 +8,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install cowsay
-        run: sudo apt-get install -y cowsay
+      - name: list files in the repository
+        run: ls -ltra
 
-      - name: Generate ASCII Art
-        run: |
-          cowsay -f dragon "Beware! The dragon has awoken!" >> dragon.txt
-          grep -i "dragon" dragon.txt
-          cat dragon.txt
-          ls
+      - name: Executing shell script to generate ASCII art
+        run: ./script.sh
