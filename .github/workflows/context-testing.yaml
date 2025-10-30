@@ -1,0 +1,15 @@
+name: Workflow Context Example
+
+on: [push]
+
+jobs:
+  print-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print GitHub context info
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Event name: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit SHA: ${{ github.sha }}"
