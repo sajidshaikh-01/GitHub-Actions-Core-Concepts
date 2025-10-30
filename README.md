@@ -36,6 +36,8 @@ GitHub Actions is a CI/CD tool built into GitHub that helps you automate, build,
 ✅ Integrates easily with any environment (Docker, Kubernetes, AWS, etc.).
 ✅ You define automation using simple YAML files inside .github/workflows/.
 
+
+
 ⚙️ Core Components
 Component	Description
 Workflow	The automation pipeline defined in YAML (.github/workflows/*.yml).
@@ -60,6 +62,9 @@ jobs:
       - name: Print message
         run: echo "🎉 Hello from GitHub Actions!"
 
+
+
+
 ⚡ Understanding Actions
 
 Actions are reusable scripts from the GitHub Marketplace or custom ones you write.
@@ -75,6 +80,8 @@ Example: using an action to checkout your repo code.
 ✅ Pulls your repository code into the runner
 ✅ Needed before running build or test commands
 
+
+
 🔔 Triggers (Events)
 
 You can trigger workflows automatically or manually.
@@ -85,6 +92,8 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:  # manual trigger
+
+
 
 🧱 Jobs and Steps
 jobs:
@@ -131,6 +140,10 @@ concurrency:
 
 ✅ Ensures only one deployment runs at a time (useful in production).
 
+
+
+
+
 🔒 Secrets and Variables
 
 Store sensitive info (like passwords or tokens) securely in GitHub → Settings → Secrets and Variables → Actions.
@@ -141,6 +154,10 @@ env:
   DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASS: ${{ secrets.DOCKER_PASSWORD }}
 
+
+
+
+
 🧠 Access Workflow Context
 
 Access details about the current workflow, commit, or actor.
@@ -150,6 +167,8 @@ Access details about the current workflow, commit, or actor.
     echo "Branch: ${{ github.ref }}"
     echo "Actor: ${{ github.actor }}"
     echo "Event: ${{ github.event_name }}"
+
+
 
 🔍 Workflow Event Filters & Activity Types
 
@@ -162,6 +181,10 @@ on:
 
 
 ✅ Helps avoid unnecessary runs when code isn’t changed.
+
+
+
+
 
 🐳 Docker Example
 
@@ -202,7 +225,3 @@ jobs:
 ✅ Integrates easily with Docker, Kubernetes, and cloud services
 ✅ Supports secrets, environment variables, concurrency, and matrix builds
 ✅ Perfect for building, testing, and deploying any modern application
-
-💬 Author
-
-Sajid Shaikh
